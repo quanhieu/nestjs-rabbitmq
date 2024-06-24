@@ -12,7 +12,7 @@ export class AppService implements OnModuleInit {
     const connectRabbitMQ = await RabbitMQ.init(connection);
     try {
       await RabbitMQ.assertQueue(queue, null);
-      // await RabbitMQ.prefetch(1);
+      await RabbitMQ.prefetch(1);
       await RabbitMQ.consume(
         queue,
         async (msg) => {
