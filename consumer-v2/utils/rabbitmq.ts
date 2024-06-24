@@ -46,7 +46,7 @@ class RabbitMQ {
   static assertQueue(queue, messageTtl) {
     return this.channel.assertQueue(queue, {
       durable: true,
-      // messageTtl,
+      messageTtl,
     });
   }
 
