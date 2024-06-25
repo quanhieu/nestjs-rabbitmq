@@ -19,11 +19,11 @@ import { ConfigModule } from '@nestjs/config';
             `amqp://${process.env.RABBITMQ_USER}:${process.env.RABBITMQ_PASSWORD}@${process.env.RABBITMQ_HOST}:${process.env.RABBITMQ_PORT}`,
           ],
           queue: 'orders-queue',
-          // noAck: false,
           queueOptions: {
             durable: true,
           },
-          prefetchCount: 1,
+          // noAck: false,
+          // prefetchCount: 1,
         },
       },
     ]),
